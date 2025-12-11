@@ -33,8 +33,6 @@ V Power Query proběhlo:
   - `GDP (mld)` – HDP převedené na miliardy,
   - `Population (mil)` – populace v milionech.
 
-Datový model v PBIX je tedy **samostatný**, pro otevření reportu **není potřeba zdrojový Excel**.
-
 ---
 
 ## 2. Datový model v Power BI
@@ -44,7 +42,7 @@ Hlavní tabulky:
 - `primary` – Česko, potraviny, ceny, mzdy, YoY inflace potravin.
 - `gdp_by_year` – meziroční změny HDP, mezd a inflace potravin v ČR.
 - `secondary` – evropské země (HDP, populace, Gini, růst HDP).
-- `slowest_price_increase` – pomocná tabulka pro nejpomaleji zdražující položky (využitá v prvním projektu, zde spíše doplňkově).
+- `slowest_price_increase` – pomocná tabulka pro nejpomaleji zdražující položky, zde nakonec nevyužita a vizuál je schovaný (využitá v prvním projektu, zde spíše doplňkově).
 
 Vztahy:
 
@@ -134,21 +132,3 @@ Vybrané DAX míry (ukázkově):
 - `Avg Food YoY % = AVERAGE(gdp_by_year[food_yoy_pct]) / 100`
 - `Avg Wage YoY % = AVERAGE(gdp_by_year[wage_yoy_pct]) / 100`
 - `Avg GDP YoY % = AVERAGE(gdp_by_year[gdp_yoy_pct]) / 100`
-
-> Poznámka: původní hodnoty jsou v procentech jako celé číslo (např. 3,18), proto dělení 100 a následné formátování jako `%`.
-
-Další výpočty:
-
-- medián / průměr `price_yoy_pct` pro porovnání produktů v Nákupním košíku,
-- přepočet HDP a populace na „čistší“ jednotky (miliony/miliardy) jako **počítané sloupce** v Power Query / modelu.
-
-Tím je splněn požadavek zadání:  
-> „Vytvoření alespoň 1 measure (metrika/míra) a 1 kalkulovaného sloupce/tabulky.“
-
----
-
-## 5. Jak report spustit
-
-1. Naklonuj nebo stáhni repo:
-   ```bash
-   git clone https://github.com/<tvuj-ucet>/<nazev-repa>.git
