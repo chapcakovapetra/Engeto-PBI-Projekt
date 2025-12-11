@@ -5,7 +5,6 @@ Power BI report, který ukazuje, jak se v letech **2006–2018** vyvíjela kupn�
 Repozitář obsahuje:
 
 - `financni-report-cesko-evropa.pbix` – kompletní Power BI report (včetně datového modelu)
-- `data/engeto-kopie-dat.xlsx` – zdrojový Excel s původními tabulkami (pro referenci)
 
 ---
 
